@@ -24,19 +24,36 @@ function setup(){
     let pixelDiv = document.getElementById("pixel");
     document.body.appendChild(newPixel);
 
-    newPixel.addEventListener('mouseover',paint)
+    newPixel.addEventListener('mouseover',paint);
   }
 }
 
 
 function paint(e){
   let pixel = e.target;
-  pixel.style.backgroundColor = 'white';
+
+//this is not P5 anymore
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+
+  //check under your escape key ``
+  pixel.style.backgroundColor = `rgb(${r},${g},${b})`;
+  console.log(`rgb(${r},${g},${b})`);
+  console.log(r,g,b);
+
   //we need to pass the variable to our new function inside parameters
   setTimeout(resetPixel, 2000, pixel);
+
+  pixel.addEventListener('click',remove);
 }
 
 function resetPixel(pixel){
   pixel.style.backgroundColor = 'black';
+
+}
+
+function remove(pixel) {
+  pixel.style.opacity = 0;
 
 }
