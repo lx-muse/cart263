@@ -1,5 +1,6 @@
 .pixel {
   background-color: black;
+  opacity: 1;
   width: 30px;
   height: 30px;
   float: left;
