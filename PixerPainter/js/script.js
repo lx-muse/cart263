@@ -32,12 +32,12 @@ function setup(){
 function paint(e){
   let pixel = e.target;
 
-//this is not P5 anymore
+//this is not P5 anymore, safari is bad
   let r = Math.floor(Math.random() * 255);
   let g = Math.floor(Math.random() * 255);
   let b = Math.floor(Math.random() * 255);
 
-  //check under your escape key ``
+  //back tick key `` for template literals
   pixel.style.backgroundColor = `rgb(${r},${g},${b})`;
   console.log(`rgb(${r},${g},${b})`);
   console.log(r,g,b);
