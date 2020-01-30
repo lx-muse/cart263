@@ -1,14 +1,14 @@
 h1 {
-  font-size: 24;
+  font-size:14;
 }
 
 
 body {
   padding: 0;
   margin: 0 auto;
-  width: 600px;
+  width: 800px;
   font-family: Courrier, monospace;
-  font-size: 8;
+  font-size: 6;
 }
 
 footer {
@@ -29,3 +29,14 @@ footer {
   text-decoration: underline;
 
 }
+
+.found {
+  background-color: grey;
+  color: blue;
+  text-decoration: underline;
+}
+
+/* .secret {
+  background-color: yellow;
+  color: red;
+} */
