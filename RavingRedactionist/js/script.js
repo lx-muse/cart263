@@ -37,7 +37,6 @@ function setup() {
 
 //calling the updateSpan() on each element of the selection the intervall set above
 function update() {
-console.log("update");
 $spans.each(updateSpan);
 
 }
@@ -47,6 +46,7 @@ console.log("updateSpan()")
 
   let r = Math.random();
   if( r < REVEAL_POSSIBILITY ) {
+    //changing the css of our selection
     $(this).removeClass('redacted');
     $(this).addClass('revealed');
   }
@@ -66,5 +66,7 @@ function secretMouseover(){
   $(this).off('mouseover');
 
   secretFound ++;
-  console.log(secretfound);
+  console.log(secretFound);
+  //changing the text with ID - using the foundnumber variable
+  $('#foundNumber').text(secretFound);
 }
