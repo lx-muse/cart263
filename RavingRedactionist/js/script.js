@@ -25,20 +25,23 @@ let secretTotal = 0;
 function setup() {
   $spans = $('.redacted');
   $secrets = $('.secret');
-  //calling update() 
+  //calling update()
   setInterval(update, UPDATE_FREQUENCY);
-  //calling spanClicked() when clicking
+  //calling spanClicked() when clicked
   $spans.on('click',spanClicked);
-
+  //Total secrets of the page
+  secretTotal = $secrets.length;
+  //calling secretMouseover()
+  $secrets.on('mouseover', secretMouseover)
 }
 
+//calling the updateSpan() on each element of the selection the intervall set above
 function update() {
 console.log("update");
-
 $spans.each(updateSpan);
 
 }
-
+//randomly reveals part of the text
 function updateSpan(){
 console.log("updateSpan()")
 
@@ -49,8 +52,19 @@ console.log("updateSpan()")
   }
 }
 
+//switching back to .redacted style on click
 function spanClicked() {
   console.log("spanClicked()")
   $(this).removeClass('revealed').addClass('redacted');
 
+}
+
+//Addind the .found class
+function secretMouseover(){
+  $(this).addClass('found');
+  //mouseover only once
+  $(this).off('mouseover');
+
+  secretFound ++;
+  console.log(secretfound);
 }
