@@ -36,7 +36,7 @@ function setup(){
   $fly.draggable({
     start: function(){
       buzzSFX.play();
-      $fly.effect("shake");
+      $(this).effect("shake");
     },
     stop: function(){
       buzzSFX.pause();
@@ -57,7 +57,7 @@ function setup(){
     $( function() {
     $( ".widget input[type=submit], .widget a, .widget button" ).button();
 
-    $( "button, input, a" ).click( function( event ) {
+    $( "button" ).click( function( event ) {
 
       console.log("new fly");
 
